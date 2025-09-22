@@ -20,33 +20,3 @@
 //    cout << "Джонни собрал " << n << " гриб" << ending << endl;
 //    return 0;
 //}
-
-
-#define _USE_MATH_DEFINES
-#include <iostream>
-#include <cmath>
-#include <limits>
-using namespace std;
-
-int main() {
-    setlocale(0, "");
-    double x;
-    cout << "Введите значение х: " << endl; cin >> x;
-
-    if (x >= -2.5 && x <= 2.5) {
-        cout << "r = " << (5.0 / 2.0) * x * x * x * x;
-    }
-    else if (x > 2.5) {
-        cout << "r = " << sqrt(2.0 * x + 1.0);
-    }
-    else {
-        double denominator = x - 3.0;
-        if (abs(denominator) < numeric_limits<double>::epsilon()) {
-            cout << "Ошибка: деление на ноль";
-        }
-        else {
-            cout << "r = " << (sin(M_PI * abs(x))) / denominator;
-        }
-    }
-    return 0;
-}
